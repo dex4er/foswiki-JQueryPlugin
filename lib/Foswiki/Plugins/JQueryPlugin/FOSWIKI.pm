@@ -83,9 +83,9 @@ sub init {
           '    "' . $pref . '": "%ENCODE{"%' . $pref . '%" type="quote"}%"';
     }
     my $text =
-"<script type='text/javascript'>\njQuery.extend(foswiki, {\n \"preferences\": {\n"
+"<script type='text/javascript'>\n<![CDATA[\njQuery.extend(foswiki, {\n \"preferences\": {\n"
       . join( ",\n", @prefs )
-      . "\n}});\n</script>";
+      . "\n}});\n]]>\n</script>";
 
     Foswiki::Func::addToZone( "script", "JQUERYPLUGIN::FOSWIKI::PREFERENCES",
         $text, "JQUERYPLUGIN::FOSWIKI" );
